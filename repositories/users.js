@@ -81,4 +81,4 @@ class UsersRepository {
   }
 }
 
-module.exports = new UsersRepository('users.json');
+module.exports = new UsersRepository('users.json ');
