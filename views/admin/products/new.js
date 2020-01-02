@@ -8,7 +8,7 @@ module.exports = ({ errors }) => {
         <input placeholder='Title' name='title'/>
         <input placeholder='Price' name='price'/>
         <input type='file' name='image'/>
-        <button>Submit<button/>
+        <button>Submit</button>
       </form>
   `
   });
