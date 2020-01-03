@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { handleErrors } = require('./middleware');
+const { handleErrors, requireAuth } = require('./middleware');
 const usersRepo = require('../../repositories/users');
 const signupTemplate = require('../../views/admin/auth/signup');
 const signinTemplate = require('../../views/admin/auth/signin');
@@ -27,7 +27,6 @@ router.post(
     const user = await usersRepo.create({ email, password });
 
     req.session.userId = user.id;
-    //res.send('good');
     res.redirect('/admin/products');
   }
 );
