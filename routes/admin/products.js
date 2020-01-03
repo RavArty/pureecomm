@@ -7,7 +7,7 @@ const productsNewTemplate = require('../../views/admin/products/new');
 const { requireTitle, requirePrice } = require('./validators');
 
 const router = express.Router();
-const upload = multer({ storage: multer.memoryStorage });
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.get('/admin/products', (req, res) => {});
 
@@ -25,6 +25,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.send(productsNewTemplate({ errors }));
     }
+    console.log('post new');
     const image = req.file.buffer.toString('base64');
     const { title, price } = req.body;
     await productsRepo.create({ title, price, image });
