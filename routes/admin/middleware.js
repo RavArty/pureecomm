@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 
 module.exports = {
-  handleError(templateFunc) {
+  handleErrors(templateFunc) {
     return (req, res, next) => {
       const errors = validationResult(req);
 
